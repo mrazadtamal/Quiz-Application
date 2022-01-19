@@ -1,10 +1,19 @@
 import React from "react";
+import Video from "./Video";
+import "../styles/Videos.css";
 
 const Videos = () => {
   return (
-    <div>
-      <h1></h1>
-    </div>
+    <>
+      <div className="videos">
+        <Video />
+        <Video />
+        <Video />
+        <Video />
+        <Video />
+        <Video />
+      </div>
+    </>
   );
 };
 
