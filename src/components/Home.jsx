@@ -1,11 +1,8 @@
 import React from "react";
+import Videos from "./Videos";
 
 const Home = () => {
-  return (
-    <div>
-      <h1>home</h1>
-    </div>
-  );
+  return <Videos />;
 };
 
 export default Home;

@@ -4,16 +4,14 @@ import "../styles/Videos.css";
 
 const Videos = () => {
   return (
-    <>
-      <div className="videos">
-        <Video />
-        <Video />
-        <Video />
-        <Video />
-        <Video />
-        <Video />
-      </div>
-    </>
+    <div className="videos">
+      <Video />
+      <Video />
+      <Video />
+      <Video />
+      <Video />
+      <Video />
+    </div>
   );
 };
 
