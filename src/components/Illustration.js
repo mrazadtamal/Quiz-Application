@@ -1,11 +1,14 @@
-import React from "react";
+import classes from "../styles/Illustration.module.css";
 
-const Illustration = () => {
+export default function Illustration() {
   return (
-    <div>
-      <h2></h2>
+    <div className={classes.illustration}>
+      <img
+        src={
+          "https://res.cloudinary.com/abidazad/image/upload/v1641320896/pexels-min-an-1131458_h4xeil.jpg"
+        }
+        alt="Signup"
+      />
     </div>
   );
-};
-
-export default Illustration;
+}
