@@ -1,11 +1,11 @@
 import React from "react";
-import "../styles/Video.css";
+import classes from "../styles/Video.module.css";
 
 const Video = () => {
   return (
     <>
       <a href="quiz.html">
-        <div className="video">
+        <div className={classes.video}>
           <img
             src={
               "https://res.cloudinary.com/abidazad/image/upload/v1633323815/python_yzfeyo.svg"
@@ -13,7 +13,7 @@ const Video = () => {
             alt="Video Title"
           />
           <p>python</p>
-          <div className="qmeta">
+          <div className={classes.qmeta}>
             <p>10 Questions</p>
             <p>Score : Not taken yet</p>
           </div>

@@ -4,7 +4,8 @@ import Checkbox from "../Checkbox";
 import Form from "../Form";
 import Illustration from "../Illustration";
 import TextInput from "../TextInput";
-const Signup = () => {
+
+export default function Signup() {
   return (
     <>
       <h1>Create an account</h1>
@@ -39,6 +40,4 @@ const Signup = () => {
       </div>
     </>
   );
-};
-
-export default Signup;
+}

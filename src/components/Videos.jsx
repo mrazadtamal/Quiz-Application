@@ -1,10 +1,10 @@
 import React from "react";
 import Video from "./Video";
-import "../styles/Videos.css";
+import classes from "../styles/Videos.module.css";
 
 const Videos = () => {
   return (
-    <div className="videos">
+    <div className={classes.videos}>
       <Video />
       <Video />
       <Video />
