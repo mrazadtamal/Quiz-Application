@@ -1,11 +1,14 @@
 import classes from "../styles/ProgressBar.module.css";
 import Button from "./Button";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 
 export default function ProgressBar() {
   return (
     <div className={classes.progressBar}>
       <div className={classes.backButton}>
-        <span className="material-icons-outlined"> arrow_back </span>
+        <span className="material-icons-outlined">
+          <AiOutlineArrowLeft />
+        </span>
       </div>
       <div className={classes.rangeArea}>
         <div className={classes.tooltip}>24% Cimplete!</div>
