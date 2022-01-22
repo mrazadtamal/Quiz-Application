@@ -6,7 +6,7 @@ export default function ProgressBar() {
   return (
     <div className={classes.progressBar}>
       <div className={classes.backButton}>
-        <span className="material-icons-outlined">
+        <span className="">
           <AiOutlineArrowLeft />
         </span>
       </div>
