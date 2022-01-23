@@ -13,7 +13,7 @@ function App() {
       {/* <Signup /> */}
       {/* <Login /> */}
       {/* <Quiz /> */}
-      <Result />
+      {/* <Result /> */}
     </Layout>
   );
 }
