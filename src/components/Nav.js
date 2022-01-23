@@ -1,4 +1,4 @@
-import logo from "../assets/images/logo-bg.png";
+// import logo from "../assets/images/logo-bg.png";
 import classes from "../styles/Nav.module.css";
 import Account from "./Account";
 
@@ -8,8 +8,8 @@ export default function Nav() {
       <ul>
         <li>
           <a href="index.html" className={classes.brand}>
-            <img src={logo} alt="Learn with Sumit Logo" />
-            <h3>Learn with Sumit</h3>
+            {/* <img src={logo} alt="Learn with Sumit Logo" /> */}
+            <h3>azad</h3>
           </a>
         </li>
       </ul>
