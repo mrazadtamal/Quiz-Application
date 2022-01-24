@@ -11,16 +11,16 @@ import Quiz from "./pages/Quiz";
 function App() {
   return (
     <BrowserRouter>
-      <Routes>
-        <Layout>
-          <Route path="new" element={<Home />} />
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
 
-          <Signup />
-          <Login />
-          <Quiz />
-          <Result />
-        </Layout>
-      </Routes>
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/quiz" element={<Quiz />} />
+          <Route path="result" element={<Result />} />
+        </Routes>
+      </Layout>
     </BrowserRouter>
   );
 }
