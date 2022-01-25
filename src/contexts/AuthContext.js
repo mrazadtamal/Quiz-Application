@@ -1,5 +1,11 @@
 import React, { useContext, useState } from "react";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  updateProfile,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
 
 import "../firebase";
 
@@ -11,22 +17,31 @@ export function useAuth() {
 
 export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
-  const [correntUserr, setCorrentUserr] = useState();
+  const [currentUser, setCurrentUser] = useState();
 
   // signup
-  function signup(email, password, username) {
+  async function signup(email, password, username) {
     const auth = getAuth();
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        // ...
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
-      });
+    await createUserWithEmailAndPassword(auth, email, password);
+
+    await updateProfile(auth.currentUser, {
+      displayName: username,
+    });
+
+    const user = auth.currentUser;
+    setCurrentUser({
+      ...user,
+    });
+  }
+  //login
+  function login(email, password) {
+    const auth = getAuth();
+    return signInWithEmailAndPassword(auth, email, password);
+  }
+  //logout
+  function logout() {
+    const auth = getAuth();
+    return signOut(auth);
   }
 
   return (
