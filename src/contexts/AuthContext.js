@@ -1,10 +1,11 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import {
   getAuth,
   createUserWithEmailAndPassword,
   updateProfile,
   signInWithEmailAndPassword,
   signOut,
+  onAuthStateChanged,
 } from "firebase/auth";
 
 import "../firebase";
@@ -18,6 +19,16 @@ export function useAuth() {
 export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true);
   const [currentUser, setCurrentUser] = useState();
+
+  useEffect(() => {
+    const auth = getAuth();
+    const unSub = onAuthStateChanged(auth, (user) => {
+      setCurrentUser(user);
+      setLoading(false);
+    });
+
+    return unSub;
+  }, []);
 
   // signup
   async function signup(email, password, username) {
@@ -43,6 +54,13 @@ export function AuthProvider({ children }) {
     const auth = getAuth();
     return signOut(auth);
   }
+
+  const value = {
+    currentUser,
+    signup,
+    login,
+    logout,
+  };
 
   return (
     <AuthContext.Provider value={value}>
