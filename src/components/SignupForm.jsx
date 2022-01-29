@@ -19,8 +19,21 @@ const SignupForm = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
+    // do validation
+    if (password !== confirmPassword) {
+      return setError("Passwords don't match!");
+    }
+    try {
+      setError("");
+      setLoading(true);
+      await signup(email, password, username);
+      history.push("/");
+    } catch (err) {
+      console.log(err);
+      setLoading(false);
+      setError("Failed to create an account!");
+    }
   }
-
   return (
     <>
       <Form style={{ height: "500px" }} onSubmit={handleSubmit}>
