@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
+import logo from "../assets/images/logo-bg.png";
 import classes from "../styles/Nav.module.css";
 import Account from "./Account";
-import { Link } from "react-router-dom";
 
 export default function Nav() {
   return (
@@ -8,8 +9,8 @@ export default function Nav() {
       <ul>
         <li>
           <Link to="/" className={classes.brand}>
-            {/* <img src={""} alt="Learn with Sumit Logo" /> */}
-            <h3>azad</h3>
+            <img src={logo} alt="Learn with Sumit Logo" />
+            <h3>Learn with Sumit</h3>
           </Link>
         </li>
       </ul>

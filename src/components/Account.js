@@ -17,7 +17,8 @@ export default function Account() {
             title="Logout"
             onClick={logout}
           >
-            logout
+            {" "}
+            logout{" "}
           </span>
         </>
       ) : (

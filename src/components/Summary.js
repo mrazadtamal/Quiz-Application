@@ -1,8 +1,7 @@
-import React from "react";
 import image from "../assets/images/success.png";
 import classes from "../styles/Summary.module.css";
 
-const Summary = () => {
+export default function Summary() {
   return (
     <div className={classes.summary}>
       <div className={classes.point}>
@@ -16,6 +15,4 @@ const Summary = () => {
       </div>
     </div>
   );
-};
-
-export default Summary;
+}
