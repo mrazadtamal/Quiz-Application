@@ -1,7 +1,7 @@
 import { getDatabase, ref, set } from "firebase/database";
 import _ from "lodash";
 import { useEffect, useReducer, useState } from "react";
-import { useHistory, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import useQuestions from "../../hooks/useQuestions";
 import Answers from "../Answers";
@@ -37,7 +37,7 @@ export default function Quiz() {
 
   const [qna, dispatch] = useReducer(reducer, initialState);
   const { currentUser } = useAuth();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch({
@@ -80,7 +80,7 @@ export default function Quiz() {
       [id]: qna,
     });
 
-    history.push({
+    navigate({
       pathname: `/result/${id}`,
       state: {
         qna,
